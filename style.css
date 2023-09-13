@@ -1,0 +1,89 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 20px;
+}
+
+#headline {
+    color: #333;
+    font-style: italic;
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.grid-overall {
+    display: grid;
+    padding: 10px;
+    width: 50%;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    
+    }
+
+.terninge-box {
+    border: 2px solid black;
+    padding: 25px;
+    background: url(sponge.png);
+    font-size: 30px;
+    text-align: center;
+    border-radius: 8px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-bottom: 10px;
+}
+
+.grid-box2 {
+    border-radius: 8px;
+    background: url(spongAndPat.jpeg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    
+    border: 2px solid black;
+    padding: 25px;
+}
+
+.grid-points {
+    grid-template-columns: auto auto auto auto;
+}
+
+.held {
+    filter: brightness(0.7) saturate(150%);
+    box-shadow: 0 0 10px crimson, 0 0 5px crimson inset;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
+}
+
+#turn {
+    color: blueviolet;
+    font-size: 20px;
+}
+
+.underTerning {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.terningerne {
+    border: 3px black;
+    transition: all 0.3 ease;
+}
+
+tr {
+    font-size: medium;
+    width: 25%;
+}
+
+label {
+    color: yellow;
+    -webkit-text-stroke: 0.25px black;
+}
+
+input {
+    border-radius: 2px;
+}
