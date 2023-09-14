@@ -23,7 +23,6 @@ function getThrowCount() {
         for (let i = 0; i < 5; i++) {
             if (!holds[i] && throwCount < 3) {
                 let randomNumber = Math.floor(Math.random()*5)+1;
-                console.log(randomNumber);
                 values[i] = randomNumber;
             }
         }
@@ -98,6 +97,7 @@ function getThrowCount() {
                 points = i * 2;
             }
         }
+        return points;
     }
 
     /**
