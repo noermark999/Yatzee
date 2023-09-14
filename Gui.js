@@ -35,6 +35,7 @@ function kast() {
     let diceImg = document.querySelectorAll("img");
     for (let i = 0; i < 5; i++) {
       let values = getValues();
+      console.log(values);
       diceImg[i].src = (values[i]) + ".png";
     }
     updatePoint();
@@ -43,9 +44,6 @@ function kast() {
     let kastKnap = document.getElementsByClassName("kastKnap");
     kastKnap[0].disabled = true;
   }
-  let totalInput = document.getElementById("total");
-  console.log(total);
-  totalInput.value = total;
   let turn = document.getElementById("turn");
   turn.innerHTML = "Tur: " + throwCount;
 }
@@ -101,5 +99,13 @@ function choosePoints(events) {
   }
   let turn = document.getElementById("turn");
   turn.innerHTML = "Slå igen:"
-  total += events.target.value;
+  total += parseInt(events.target.value);
+  let totalInput = document.getElementById("total");
+  totalInput.value = total;
+  const inputs = document.getElementsByClassName("selectable");
+  for (let i = 0; i < inputs.length; i++) {
+    if (inputs[i].disabled == false) {
+      inputs[i].value = 0;
+    }
+  }
 }

@@ -22,7 +22,7 @@ function getThrowCount() {
     function throwDice(holds) {
         for (let i = 0; i < 5; i++) {
             if (!holds[i] && throwCount < 3) {
-                let randomNumber = Math.floor(Math.random()*5)+1;
+                let randomNumber = Math.floor(Math.random()*6)+1;
                 values[i] = randomNumber;
             }
         }
