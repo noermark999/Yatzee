@@ -1,6 +1,6 @@
 let values = [0,0,0,0,0];
 let throwCount = 0;
-let upperSecScore = 0;
+
 
 
 function resetThrowCount() {
@@ -233,3 +233,38 @@ function getThrowCount() {
         }
         return points;
     }
+
+    // -----------------------------------------------------------------------------------
+
+    function sum() {
+    let result = 0;
+    const inputs = document.getElementsByClassName("selectable");
+    for (let i = 0; i < 6; i++) {
+      result += parseInt(inputs[i].value);
+    }
+    return result;
+  }
+  
+  // ------------------------------------------------------------------------------------
+  
+  function bonus() {
+    if (document.getElementById("sum").value > 62) {
+      return 50;
+    } else {
+      return 0;
+    }
+  }
+  
+  // --------------------------------------------------------------------------------------
+  
+  function total() {
+    let result = 0;
+    const inputs = document.getElementsByClassName("selectable");
+    for (let e of inputs) {
+      result += parseInt(e.value);
+    }
+    result += bonus();
+    return result;
+  }
+
+    

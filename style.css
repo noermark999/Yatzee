@@ -141,3 +141,7 @@ input {
         color: #6666ff;
     }
   }
+
+  input:disabled {
+    background-color: yellow;
+  }
