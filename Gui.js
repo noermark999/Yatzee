@@ -1,5 +1,4 @@
 let terningdiv = document.getElementsByClassName("terningerne");
-let total = 0;
 
 //Start på spil og terninger tilføjes
 let holds = [false, false, false, false, false];
@@ -99,13 +98,50 @@ function choosePoints(events) {
   }
   let turn = document.getElementById("turn");
   turn.innerHTML = "Slå igen:"
-  total += parseInt(events.target.value);
-  let totalInput = document.getElementById("total");
-  totalInput.value = total;
+
   const inputs = document.getElementsByClassName("selectable");
   for (let i = 0; i < inputs.length; i++) {
     if (inputs[i].disabled == false) {
       inputs[i].value = 0;
     }
   }
+
+  document.getElementById("sum").value = sum();
+
+  document.getElementById("bonus").value = bonus();
+
+  document.getElementById("total").value = total();
+}
+
+// -----------------------------------------------------------------------------------
+
+function sum() {
+  let result = 0;
+  const inputs = document.getElementsByClassName("selectable");
+  for (let i = 0; i < 6; i++) {
+    result += parseInt(inputs[i].value);
+  }
+  return result;
+}
+
+// ------------------------------------------------------------------------------------
+
+function bonus() {
+  if (document.getElementById("sum").value > 62) {
+    return 50;
+  } else {
+    return 0;
+  }
+}
+
+// --------------------------------------------------------------------------------------
+
+function total() {
+  let result = 0;
+  const inputs = document.getElementsByClassName("selectable");
+  for (let e of inputs) {
+    result += parseInt(e.value);
+  }
+  result += bonus();
+  return result;
 }
